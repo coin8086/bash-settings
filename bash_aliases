@@ -17,6 +17,12 @@ function measure
   ps --forest -o pid,ppid,%cpu,%mem,rsz,vsz,time,cmd -g $(ps -o sid= -p "$1")
 }
 
+# Pretty print JSON string from stdin
+alias ppj='python -m json.tool'
+
+# Pretty print XML string from stdin
+alias ppx='xmllint --format -'
+
 
 ##################################################
 #
@@ -69,5 +75,3 @@ alias p3='python3'
 alias p3d='python3 -m pdb'
 alias p3p='python3 -m pip'
 
-# Pretty print JSON string from stdin
-alias ppj='python -m json.tool'
