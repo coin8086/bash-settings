@@ -7,9 +7,10 @@ alias lt='ls -lhFtr --color=auto'
 alias la='ls -lhFa --color=auto'
 
 alias f=fg
+alias j=jobs
 alias r=reset
-alias ?='echo $?'
 alias p='ps -lfy -U $USER'
+alias ?='echo $?'
 
 function measure
 {
