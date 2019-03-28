@@ -5,6 +5,7 @@
 alias l='ls -lhF --color=auto'
 alias lt='ls -lhFtr --color=auto'
 alias la='ls -lhFa --color=auto'
+alias ll='ls -lhFa --color=auto'
 
 alias f=fg
 alias j=jobs
