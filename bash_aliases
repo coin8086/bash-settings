@@ -8,6 +8,15 @@ alias la='ls -lhFa --color=auto'
 alias ll='ls -lhFa --color=auto'
 
 alias f=fg
+alias f1='fg %1'
+alias f2='fg %2'
+alias f3='fg %3'
+alias f4='fg %4'
+alias f5='fg %5'
+alias f6='fg %6'
+alias f7='fg %7'
+alias f8='fg %8'
+alias f9='fg %9'
 alias j=jobs
 alias r=reset
 alias p='ps -lfy -U $USER'
