@@ -30,6 +30,8 @@ function measure
 # Pretty print JSON string from stdin
 alias ppj='python -m json.tool'
 
+alias tojson="python -c 'import json,sys; print(json.dumps(sys.stdin.read()))'"
+
 # Pretty print XML string from stdin
 alias ppx='xmllint --format -'
 
@@ -56,6 +58,12 @@ alias gc='git commit'
 alias gd='GIT_PAGER="less -r" git diff -U10'
 alias gb='git branch'
 alias gls='git ls-files'
+
+# Diff commit($1) with previous commit and optionally limited to a specific path/file($2)
+function gdp
+{
+  git diff "$1"^! $2
+}
 
 
 ##################################################
