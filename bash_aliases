@@ -35,6 +35,12 @@ alias tojson="python -c 'import json,sys; print(json.dumps(sys.stdin.read()))'"
 # Pretty print XML string from stdin
 alias ppx='xmllint --format -'
 
+# PS1
+git_branch() {
+  git branch 2>/dev/null | grep '^*' | colrm 1 2
+}
+export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
+
 
 ##################################################
 #
