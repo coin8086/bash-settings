@@ -64,6 +64,7 @@ alias gc='git commit'
 alias gd='GIT_PAGER="less -r" git diff -U10'
 alias gb='git branch'
 alias gls='git ls-files'
+alias glsu='git ls-files --error-unmatch'
 
 # Diff commit($1) with previous commit and optionally limited to a specific path/file($2)
 function gdp
