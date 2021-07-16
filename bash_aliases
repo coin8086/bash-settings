@@ -100,3 +100,12 @@ alias p3='python3'
 alias p3d='python3 -m pdb'
 alias p3p='python3 -m pip'
 
+##################################################
+#
+# K8s
+#
+
+if ! type kubectl > /dev/null && type minikube > /dev/null; then
+  alias kubectl='minikube kubectl --'
+fi
+alias kb=kubectl
