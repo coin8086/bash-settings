@@ -105,7 +105,7 @@ alias p3p='python3 -m pip'
 # K8s
 #
 
-if ! type kubectl > /dev/null && type minikube > /dev/null; then
+if ! type kubectl > /dev/null 2>&1 && type minikube > /dev/null 2>&1 ; then
   alias kubectl='minikube kubectl --'
 fi
 alias kb=kubectl
