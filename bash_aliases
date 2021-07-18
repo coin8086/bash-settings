@@ -109,3 +109,6 @@ if ! type kubectl > /dev/null 2>&1 && type minikube > /dev/null 2>&1 ; then
   alias kubectl='minikube kubectl --'
 fi
 alias kb=kubectl
+alias kbc='kubectl config'
+alias kbg='kubectl get'
+alias kbd='kubectl describe'
