@@ -1,6 +1,6 @@
 ##################################################
 #
-# Shell
+# General Shell
 #
 alias l='ls -lhF --color=auto'
 alias lt='ls -lhFtr --color=auto'
@@ -18,10 +18,27 @@ alias f7='fg %7'
 alias f8='fg %8'
 alias f9='fg %9'
 alias j=jobs
-alias r=reset
 alias p='ps -lfy -U $USER'
 alias ?='echo $?'
 
+# PS1
+git_branch() {
+  git branch 2>/dev/null | grep '^*' | colrm 1 2
+}
+export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
+
+# Command History
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTFILESIZE=2000
+HISTSIZE=1000
+
+##################################################
+#
+# Pretty Print
+#
+
+# Show process and its children
 function measure
 {
   ps --forest -o pid,ppid,%cpu,%mem,rsz,vsz,time,cmd -g $(ps -o sid= -p "$1")
@@ -35,17 +52,12 @@ alias tojson="python -c 'import json,sys; print(json.dumps(sys.stdin.read()))'"
 # Pretty print XML string from stdin
 alias ppx='xmllint --format -'
 
-# PS1
-git_branch() {
-  git branch 2>/dev/null | grep '^*' | colrm 1 2
-}
-export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
-
-
 ##################################################
 #
 # Vi
 #
+export EDITOR=vim
+stty -ixon
 alias vi=vim
 alias vm='vi $(git ls-files --modified --others --exclude-per-directory=.gitignore | sort)'
 alias vl='vi -S ~/.last-opened'
