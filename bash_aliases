@@ -25,7 +25,7 @@ alias ?='echo $?'
 git_branch() {
   git branch 2>/dev/null | grep '^*' | colrm 1 2
 }
-export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
+PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
 
 # Command History
 shopt -s histappend
