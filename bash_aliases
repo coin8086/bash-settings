@@ -23,7 +23,7 @@ alias ?='echo $?'
 
 # PS1
 
-if type git >/dev/null && type colrm >/dev/null ; then
+if type git >/dev/null 2>&1 && type colrm >/dev/null 2>&1 ; then
   git_branch() {
     git branch 2>/dev/null | grep '^*' | colrm 1 2
   }
