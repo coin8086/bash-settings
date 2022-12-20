@@ -22,10 +22,15 @@ alias p='ps -lfy -U $USER'
 alias ?='echo $?'
 
 # PS1
-git_branch() {
-  git branch 2>/dev/null | grep '^*' | colrm 1 2
-}
-PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
+
+if type git >/dev/null && type colrm >/dev/null ; then
+  git_branch() {
+    git branch 2>/dev/null | grep '^*' | colrm 1 2
+  }
+  PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[\033[36m\]$(git_branch)\[\033[0m\]\n\$ '
+else
+  PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n$ '
+fi
 
 # Command History
 shopt -s histappend
