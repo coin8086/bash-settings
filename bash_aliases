@@ -6,6 +6,7 @@ alias l='ls -lhF --color=auto'
 alias lt='ls -lhFtr --color=auto'
 alias la='ls -lhFa --color=auto'
 alias ll='ls -lhFa --color=auto'
+alias diff='diff --color'
 
 alias f=fg
 alias f1='fg %1'
@@ -67,6 +68,7 @@ alias vi=vim
 alias vm='vi $(git ls-files --modified --others --exclude-per-directory=.gitignore | sort)'
 alias vl='vi -S ~/.last-opened'
 alias vr='vi -R'
+alias sv='sudo -E vi'
 
 
 ##################################################
