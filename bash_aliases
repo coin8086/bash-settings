@@ -39,6 +39,9 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=2000
 HISTSIZE=1000
 
+# Environment Variables
+export PATH=~/bin:$PATH
+
 ##################################################
 #
 # Pretty Print
