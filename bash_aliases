@@ -41,6 +41,7 @@ HISTSIZE=1000
 
 # Environment Variables
 export PATH=~/bin:$PATH
+export EDITOR=vim
 
 ##################################################
 #
@@ -65,7 +66,6 @@ alias ppx='xmllint --format -'
 #
 # Vi
 #
-export EDITOR=vim
 stty -ixon
 alias vi=vim
 alias vm='vi $(git ls-files --modified --others --exclude-per-directory=.gitignore | sort)'
